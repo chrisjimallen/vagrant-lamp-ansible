@@ -11,8 +11,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |vconfig|
         config.vm.provider :virtualbox do |v|
             # set memory to > 1GB
             v.customize [ "modifyvm", :id, "--memory", "1100" ]
-            # maybe this will help Windows hosts with symlinks
-            v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/vagrant", "1"]
         end
         config.vm.host_name = "sitevagrant"
 
